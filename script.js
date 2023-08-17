@@ -7,6 +7,7 @@ let caption = document.getElementById("bg-caption");
 caption.attributes["data-mytext"] = "怎麽還要再等";
 caption.innerText = "怎麽還要再等";
 
+let mainStuff = document.getElementById("main-stuff");
 
 function updateStuff() {
     let currentTime = Date.now() / 1000;
@@ -109,6 +110,7 @@ function chineseCountdownText(delta) {
         countdownText += "" + numberToChinese(Math.floor(delta)) + "秒";
     }
     countdownText += "啊";
+    countdownText += window.innerHeight;
     return countdownText
 }
 
@@ -125,4 +127,9 @@ function numberToChinese(number) {
 }
 
 updateStuff();
+mainStuff.style.setProperty("--alt-vh", window.innerHeight + "px");
+
+addEventListener("resize", (e) => {
+    mainStuff.style.setProperty("--alt-vh", window.innerHeight + "px");
+});
 setInterval(updateStuff, 1000);

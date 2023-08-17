@@ -28,7 +28,7 @@
     z-index: 1;
     left: 0;
     /* top: 88.5%; */
-    top: calc(100vw / 1187 * 0.4425 * 662 + 50%);
+    top: calc(100vw / 1187 * 0.885 * 662 + 50% - 100vw / 1187 * 662 / 2);
     width: 100%;
     text-align: center;
     vertical-align: middle;
